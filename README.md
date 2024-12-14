@@ -1,2 +1,2 @@
-# Laptop-Depot
+# Laptop Depot
 Only Laptops
