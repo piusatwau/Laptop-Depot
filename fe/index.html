@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Newegg-Style Layout</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/03a1a16b7f.js" crossorigin="anonymous"></script>
+  <script src="./script.js"></script>
+
+</head>
+<body class="bg-gray-100 font-sans">
+  <!-- Top Navbar -->
+  <header class="bg-white shadow-md">
+    <div class="flex justify-between items-center p-4">
+      <!-- Logo & Address -->
+      <div class="flex items-center space-x-4">
+        <img src="./assets/laptop_depot_logo.svg" alt="Logo" class="h-8">
+        <div class="flex items-center space-x-2 text-gray-600">
+          <span class="font-bold text-lg">Laptop Depot</span>
+        </div>
+      </div>
+  
+      <!-- Hamburger Menu for Mobile -->
+      <button class="sm:hidden block text-gray-600" id="mobile-menu-btn">
+        <i class="fa-solid fa-cart-shopping"></i>
+      </button>
+  
+      <!-- Mobile Menu -->
+      <div class="hidden fixed top-0 left-0 w-3/4 bg-white h-full z-50 shadow-lg" id="mobile-menu">
+        <div class="flex justify-end p-4">
+          <button class="text-gray-600 text-2xl" id="close-mobile-menu">&times;</button>
+        </div>
+        <ul class="space-y-4 p-4 text-gray-600">
+          <li><a href="#" class="hover:text-blue-600">Sign In / Register</a></li>
+          <li><a href="#" class="hover:text-blue-600">Cart</a></li>
+          <li><a href="#" class="hover:text-blue-600">Deals</a></li>
+          <li><a href="#" class="hover:text-blue-600">Help Center</a></li>
+        </ul>
+      </div>
+  
+      <!-- Search Bar -->
+      <div class="hidden sm:flex flex-1 mx-4 relative">
+        <input
+          type="text"
+          placeholder="Search"
+          class="w-full py-2 px-4 border rounded-full focus:outline-none"
+        />
+        <button
+          class="absolute right-1 top-1/2 transform -translate-y-1/2 bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-700"
+        >
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+  
+      <!-- Icons -->
+      <div class="hidden sm:flex items-center space-x-6 text-gray-600">
+        <button>🔔</button>
+        <button>🌐</button>
+        <button>🌙</button>
+        <a href="#" class="hover:text-blue-600">Sign In / Register</a>
+        <a href="#" class="hover:text-blue-600"><i class="fa-solid fa-cart-shopping"></i></a>
+      </div>
+    </div>
+  
+    <!-- Bottom Navbar -->
+    <nav class="bg-red-100 py-2 border-t">
+      <div class="flex flex-wrap items-center justify-between px-6">
+        <!-- Left-Aligned Dropdown -->
+        <div class="relative group">
+          <a href="#" class="flex items-center space-x-2 font-semibold text-gray-600 hover:text-blue-600">
+            <i class="fa-solid fa-bars"></i>
+            <span>Menu</span>
+          </a>
+          <!-- Mega Dropdown -->
+          <div class="absolute left-0 hidden w-[700px] bg-white border border-gray-200 shadow-lg group-hover:block z-50">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-6">
+              <!-- Section 1 -->
+              <div>
+                <h3 class="font-semibold text-lg text-blue-600 mb-2">Brands</h3>
+                <ul>
+                  <li><a href="#" class="block py-1 text-gray-700 hover:text-blue-600">Apple</a></li>
+                  <li><a href="#" class="block py-1 text-gray-700 hover:text-blue-600">HP</a></li>
+                  <li><a href="#" class="block py-1 text-gray-700 hover:text-blue-600">Dell</a></li>
+                  <li><a href="#" class="block py-1 text-gray-700 hover:text-blue-600">Lenovo</a></li>
+                </ul>
+              </div>
+              <!-- Section 2 -->
+              <div>
+                <h3 class="font-semibold text-lg text-blue-600 mb-2">Categories</h3>
+                <ul>
+                  <li><a href="#" class="block py-1 text-gray-700 hover:text-blue-600">Laptops</a></li>
+                  <li><a href="#" class="block py-1 text-gray-700 hover:text-blue-600">Desktops</a></li>
+                  <li><a href="#" class="block py-1 text-gray-700 hover:text-blue-600">Monitors</a></li>
+                  <li><a href="#" class="block py-1 text-gray-700 hover:text-blue-600">Accessories</a></li>
+                </ul>
+              </div>
+              <!-- Section 3 -->
+              <div>
+                <h3 class="font-semibold text-lg text-blue-600 mb-2">Offers</h3>
+                <ul>
+                  <li><a href="#" class="block py-1 text-gray-700 hover:text-blue-600">Up to 50% Off</a></li>
+                  <li><a href="#" class="block py-1 text-gray-700 hover:text-blue-600">Clearance Sale</a></li>
+                  <li><a href="#" class="block py-1 text-gray-700 hover:text-blue-600">Bundle Deals</a></li>
+                </ul>
+              </div>
+              <!-- Section 4 -->
+              <div>
+                <h3 class="font-semibold text-lg text-blue-600 mb-2">Support</h3>
+                <ul>
+                  <li><a href="#" class="block py-1 text-gray-700 hover:text-blue-600">Contact Us</a></li>
+                  <li><a href="#" class="block py-1 text-gray-700 hover:text-blue-600">Warranty</a></li>
+                  <li><a href="#" class="block py-1 text-gray-700 hover:text-blue-600">FAQs</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Center-Aligned Links -->
+        <div class="hidden sm:flex justify-center space-x-6 font-semibold text-gray-600">
+          <a href="#" class="text-green-600">Dealcember Deals</a>
+          <a href="#" class="text-red-600">Holiday Gift Guide</a>
+          <a href="#" class="hover:text-blue-600">PC Builder</a>
+          <a href="#" class="hover:text-blue-600">Clearance</a>
+          <a href="#" class="hover:text-blue-600">Best Sellers</a>
+        </div>
+  
+        <!-- Right-Aligned Buttons -->
+        <div class="hidden sm:flex space-x-4">
+          <a href="#" class="py-1 px-3 text-sm font-semibold text-white bg-red-500 rounded hover:bg-green-600">Feedback</a>
+          <a href="#" class="py-1 px-3 text-sm font-semibold text-white bg-green-500 rounded hover:bg-blue-600">Help Center</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- *******************************************************
+   ***********************************************************
+
+   HERO SECTION
+   
+   ***********************************************************
+   *********************************************************** -->
+
+        <div class="flex flex-col md:flex-row pt-4 pl-2 ">
+          <!-- Sidebar Navigation -->
+          <aside class="w-full md:w-1/6 bg-gray-900 text-white py-4 hidden md:block rounded-lg" id="sidebar">
+            <ul>
+              <li class="hover:bg-red-700 px-6 py-3 cursor-pointer flex items-center justify-between">
+                Components & Storage
+                <i class="fas fa-chevron-right ml-2 text-white"></i>
+              </li>
+              <li class="hover:bg-red-700 px-6 py-3 cursor-pointer flex items-center justify-between">
+                Computer Systems
+                <i class="fas fa-chevron-right ml-2 text-white"></i>
+              </li>
+              <li class="hover:bg-red-700 px-6 py-3 cursor-pointer flex items-center justify-between">
+                Computer Peripherals
+                <i class="fas fa-chevron-right ml-2 text-white"></i>
+              </li>
+              <li class="hover:bg-red-700 px-6 py-3 cursor-pointer flex items-center justify-between">
+                Gaming & VR
+                <i class="fas fa-chevron-right ml-2 text-white"></i>
+              </li>
+              <li class="hover:bg-red-700 px-6 py-3 cursor-pointer flex items-center justify-between">
+                Smart Home & Security
+                <i class="fas fa-chevron-right ml-2 text-white"></i>
+              </li>
+              <li class="hover:bg-red-700 px-6 py-3 cursor-pointer flex items-center justify-between">
+                Networking
+                <i class="fas fa-chevron-right ml-2 text-white"></i>
+              </li>
+              <li class="hover:bg-red-700 px-6 py-3 cursor-pointer flex items-center justify-between">
+                Office Solutions
+                <i class="fas fa-chevron-right ml-2 text-white"></i>
+              </li>
+              <li class="hover:bg-red-700 px-6 py-3 cursor-pointer flex items-center justify-between">
+                More
+                <i class="fas fa-chevron-right ml-2 text-white"></i>
+              </li>
+            </ul>
+          </aside>
+          
+        
+          <!-- Mobile Sidebar Button -->
+          <button
+            class="md:hidden bg-gray-900 text-white px-4 py-2 mb-4 ml-2 rounded"
+            id="toggle-sidebar"
+          >
+            Categories
+          </button>
+        
+          <!-- Content Section -->
+          <main class="w-full md:w-5/6 p-4">
+            <!-- Hero Banner -->
+            <div class="relative">
+              <img
+                src="./assets/hero.jpg"
+                alt="Deal Banner"
+                class="rounded-lg w-full"
+              />
+              <div class="absolute top-0 left-0 p-8 text-white font-bold">
+                <h1 class="text-2xl sm:text-4xl">DEALCEMBER</h1>
+                <p class="text-sm sm:text-lg">Find the Perfect Gift for Every Loved One</p>
+                <button class="mt-4 bg-blue-600 px-4 py-2 rounded hover:bg-red-700">
+                  Shop Now
+                </button>
+              </div>
+            </div>
+        
+            <!-- Product Grid -->
+            <section class="mt-8">
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Deal Card -->
+                <div class="bg-white rounded-lg shadow p-4 text-center">
+                  <h3 class="text-lg sm:text-2xl font-semibold text-green-600 mb-2">Up to 73% Off</h3>
+                  <p class="text-gray-600 mb-4">Components & Storage</p>
+                  <img
+                    src="https://placehold.co/150x150"
+                    alt="Product"
+                    class="mx-auto mb-4"
+                  />
+                  <button class="bg-red-400 text-white px-4 py-2 rounded hover:bg-red-700">
+                    Shop Now
+                  </button>
+                </div>
+                <!-- Repeat similar deal cards -->
+                <div class="bg-white rounded-lg shadow p-4 text-center">
+                  <h3 class="text-lg sm:text-2xl font-semibold text-green-600 mb-2">Up to 72% Off</h3>
+                  <p class="text-gray-600 mb-4">Computer Systems</p>
+                  <img
+                    src="https://placehold.co/150x150"
+                    alt="Product"
+                    class="mx-auto mb-4"
+                  />
+                  <button class="bg-red-400 text-white px-4 py-2 rounded hover:bg-red-700">
+                    Shop Now
+                  </button>
+                </div>
+                <div class="bg-white rounded-lg shadow p-4 text-center">
+                  <h3 class="text-lg sm:text-2xl font-semibold text-green-600 mb-2">Up to 77% Off</h3>
+                  <p class="text-gray-600 mb-4">Computer Peripherals</p>
+                  <img
+                    src="https://placehold.co/150x150"
+                    alt="Product"
+                    class="mx-auto mb-4"
+                  />
+                  <button class="bg-red-400 text-white px-4 py-2 rounded hover:bg-red-700">
+                    Shop Now
+                  </button>
+                </div>
+                <div class="bg-white rounded-lg shadow p-4 text-center">
+                  <h3 class="text-lg sm:text-2xl font-semibold text-green-600 mb-2">Up to 44% Off</h3>
+                  <p class="text-gray-600 mb-4">Server & Components</p>
+                  <img
+                    src="https://placehold.co/150x150"
+                    alt="Product"
+                    class="mx-auto mb-4"
+                  />
+                  <button class="bg-red-400 text-white px-4 py-2 rounded hover:bg-red-700">
+                    Shop Now
+                  </button>
+                </div>
+              </div>
+            </section>
+          </main>
+        </div>
+
+
+      <!--
+        ******************************************************************
+        ******************************************************************
+        
+        CATEGORIES SECTION
+        
+        ******************************************************************
+        ******************************************************************
+        -->
+
+        <div class="mx-auto py-10 px-4 pt-32 pb-16">
+                  
+          <!-- Categories Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          
+            <!-- Category: Ultimate Gaming -->
+            <div>
+              <h2 class="text-xl font-bold text-gray-800 mb-4">Ultimate Gaming</h2>
+              <div class="grid grid-cols-2 gap-4">
+                <div class="bg-white shadow-sm p-4 rounded-lg">
+                  <img src="console_image.jpg" alt="Consoles & VR" class="w-full h-20 object-contain mb-2">
+                  <p class="text-sm text-center font-semibold">Consoles & VR</p>
+                </div>
+                <div class="bg-white shadow-sm p-4 rounded-lg">
+                  <img src="gaming_furniture.jpg" alt="Gaming Furnitures" class="w-full h-20 object-contain mb-2">
+                  <p class="text-sm text-center font-semibold">Gaming Furnitures</p>
+                </div>
+                <div class="bg-white shadow-sm p-4 rounded-lg">
+                  <img src="game_deals.jpg" alt="Game Deals" class="w-full h-20 object-contain mb-2">
+                  <p class="text-sm text-center font-semibold">Game Deals</p>
+                </div>
+                <div class="bg-white shadow-sm p-4 rounded-lg">
+                  <img src="gaming_monitor.jpg" alt="Gaming Monitors" class="w-full h-20 object-contain mb-2">
+                  <p class="text-sm text-center font-semibold">Gaming Monitors</p>
+                </div>
+              </div>
+            </div>
+        
+            <!-- Category: Smart Gear & Gadgets -->
+            <div>
+              <h2 class="text-xl font-bold text-gray-800 mb-4">Smart Gear & Gadgets</h2>
+              <div class="grid grid-cols-2 gap-4">
+                <div class="bg-white shadow-sm p-4 rounded-lg">
+                  <img src="headphones.jpg" alt="Headphones" class="w-full h-20 object-contain mb-2">
+                  <p class="text-sm text-center font-semibold">Headphones</p>
+                </div>
+                <div class="bg-white shadow-sm p-4 rounded-lg">
+                  <img src="apple_renewed.jpg" alt="Apple Renewed" class="w-full h-20 object-contain mb-2">
+                  <p class="text-sm text-center font-semibold">Apple Renewed</p>
+                </div>
+                <div class="bg-white shadow-sm p-4 rounded-lg">
+                  <img src="smart_home.jpg" alt="Smart Home" class="w-full h-20 object-contain mb-2">
+                  <p class="text-sm text-center font-semibold">Smart Home</p>
+                </div>
+                <div class="bg-white shadow-sm p-4 rounded-lg">
+                  <img src="digital_camera.jpg" alt="Digital Cameras" class="w-full h-20 object-contain mb-2">
+                  <p class="text-sm text-center font-semibold">Digital Cameras</p>
+                </div>
+              </div>
+            </div>
+        
+            <!-- Category: Home & Outdoor -->
+            <div>
+              <h2 class="text-xl font-bold text-gray-800 mb-4">Home & Outdoor</h2>
+              <div class="grid grid-cols-2 gap-4">
+                <div class="bg-white shadow-sm p-4 rounded-lg">
+                  <img src="../assets/laptop.jpeg" alt="Cleaning Gadgets" class="w-full h-20 object-contain mb-2">
+                  <p class="text-sm text-center font-semibold">Cleaning Gadgets</p>
+                </div>
+                <div class="bg-white shadow-sm p-4 rounded-lg">
+                  <img src="../assets/laptop.jpeg" alt="Power Generators" class="w-full h-20 object-contain mb-2">
+                  <p class="text-sm text-center font-semibold">Power Generators</p>
+                </div>
+                <div class="bg-white shadow-sm p-4 rounded-lg">
+                  <img src="../assets/laptop.jpeg" alt="Health & Wellness" class="w-full h-20 object-contain mb-2">
+                  <p class="text-sm text-center font-semibold">Health & Wellness</p>
+                </div>
+                <div class="bg-white shadow-sm p-4 rounded-lg">
+                  <img src="../assets/laptop.jpeg" alt="E-Bikes & Scooters" class="w-full h-20 object-contain mb-2">
+                  <p class="text-sm text-center font-semibold">E-Bikes & Scooters</p>
+                </div>
+              </div>
+            </div>
+        
+            <!-- Category: AI & Server -->
+            <div>
+              <h2 class="text-xl font-bold text-gray-800 mb-4">AI & Server</h2>
+              <div class="grid grid-cols-2 gap-4">
+                <div class="bg-white shadow-sm p-4 rounded-lg">
+                  <img src="../assets/laptop.jpeg" alt="Acceleration Card" class="w-full h-20 object-contain mb-2">
+                  <p class="text-sm text-center font-semibold">Acceleration Card</p>
+                </div>
+                <div class="bg-white shadow-sm p-4 rounded-lg">
+                  <img src="../assets/laptop.jpeg" alt="Server Configurator" class="w-full h-20 object-contain mb-2">
+                  <p class="text-sm text-center font-semibold">Server Configurator</p>
+                </div>
+                <div class="bg-white shadow-sm p-4 rounded-lg">
+                  <img src="../assets/laptop.jpeg" alt="Ampere Computing" class="w-full h-20 object-contain mb-2">
+                  <p class="text-sm text-center font-semibold">Ampere Computing</p>
+                </div>
+                <div class="bg-white shadow-sm p-4 rounded-lg">
+                  <img src="../assets/laptop.jpeg" alt="Server Components" class="w-full h-20 object-contain mb-2">
+                  <p class="text-sm text-center font-semibold">Server Components</p>
+                </div>
+              </div>
+            </div>
+        
+          </div>
+        </div>
+
+        <!--
+        **********************************************************
+        **********************************************************
+        
+        REACHOUT TO US
+        
+        **********************************************************
+        **********************************************************
+        -->
+
+      <div class=" mx-auto p-4 grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Left Section: Email Subscription -->
+        <div class="bg-red-50 p-6 rounded-lg flex items-center">
+          <div class="flex-1">
+            <h2 class="text-lg font-semibold italic text-gray-800 mb-2">Deals Just For You</h2>
+            <p class="text-sm text-gray-700 mb-4">Sign up to receive exclusive offers in your inbox.</p>
+            <div class="flex items-center">
+              <div class="relative w-full">
+                <input 
+                  type="email" 
+                  placeholder="Enter your e-mail address"
+                  class="w-full border border-gray-300 rounded-l-md py-2 px-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+              <button class="bg-red-600 text-white px-4 py-2 rounded-r-md text-sm font-medium hover:bg-blue-700">
+                Sign up
+              </button>
+            </div>
+            <a href="#" class="text-red-600 text-sm mt-4 inline-block hover:underline">View latest email deals &gt;</a>
+          </div>
+          
+        </div>
+
+        <!-- Right Section: App Download -->
+        <div class="bg-red-50 p-6 rounded-lg">
+          <h2 class="text-lg font-semibold italic text-gray-800 mb-2">Download Our APP</h2>
+          <p class="text-sm text-gray-700 mb-4">Enter your phone number and we'll send you a download link.</p>
+          <div class="flex items-center mb-4">
+            <div class="flex items-center border border-gray-300 rounded-l-md px-3 bg-white">
+              <span class="text-gray-500 text-sm">+1</span>
+            </div>
+            <input 
+              type="text" 
+              placeholder="Enter your phone number"
+              class="w-full border border-gray-300 py-2 px-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <button class="bg-red-600 text-white px-4 py-2 rounded-r-md text-sm font-medium hover:bg-blue-700">
+              Send link
+            </button>
+          </div>
+          <div class="flex items-center my-2">
+            <div class="h-px flex-1 bg-gray-300"></div>
+            <p class="mx-4 text-gray-500 text-sm">OR</p>
+            <div class="h-px flex-1 bg-gray-300"></div>
+          </div>
+          <div class="flex items-center">
+            <img 
+              src="https://via.placeholder.com/80" 
+              alt="QR Code"
+              class="w-20 h-20 mr-4"
+            />
+            <div>
+              <p class="text-sm text-gray-700 font-semibold">Scan the QR code to download App</p>
+              <p class="text-xs text-gray-500">Scan this code with your phone's camera.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--
+      ************************************************************
+      ************************************************************
+      
+      FOOTER
+      
+      ************************************************************
+      ************************************************************
+      -->
+
+  
+<!--FOOTER -->
+  <footer class="bg-gray-900 text-white text-sm">
+    <!-- Top Footer -->
+    <div class="container max-w-screen-xl mx-auto py-10 px-4 grid grid-cols-2 md:grid-cols-4 gap-6">
+      <!-- Customer Service -->
+      <div>
+        <h3 class="font-bold mb-4">CUSTOMER SERVICE</h3>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:underline">Help Center</a></li>
+          <li><a href="#" class="hover:underline">Track an Order</a></li>
+          <li><a href="#" class="hover:underline">Return an Item</a></li>
+          <li><a href="#" class="hover:underline">Return Policy</a></li>
+          <li><a href="#" class="hover:underline">Privacy & Security</a></li>
+          <li><a href="#" class="hover:underline">Feedback</a></li>
+        </ul>
+      </div>
+  
+      <!-- My Account -->
+      <div>
+        <h3 class="font-bold mb-4">MY ACCOUNT</h3>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:underline">Login/Register</a></li>
+          <li><a href="#" class="hover:underline">Browsing History</a></li>
+          <li><a href="#" class="hover:underline">Order History</a></li>
+          <li><a href="#" class="hover:underline">Returns History</a></li>
+          <li><a href="#" class="hover:underline">Address Book</a></li>
+          <li><a href="#" class="hover:underline">Wish Lists</a></li>
+          <li><a href="#" class="hover:underline">My Build Lists</a></li>
+          <li><a href="#" class="hover:underline">Email Notifications</a></li>
+        </ul>
+      </div>
+  
+      <!-- Company Information -->
+      <div>
+        <h3 class="font-bold mb-4">COMPANY INFORMATION</h3>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:underline">About Laptop Depot</a></li>
+          <li><a href="#" class="hover:underline">Investor Relations</a></li>
+          <li><a href="#" class="hover:underline">Student Internship Program</a></li>
+         
+          <li><a href="#" class="hover:underline">Hours and Locations</a></li>
+          <li><a href="#" class="hover:underline">Press Inquiries</a></li>
+          <li><a href="#" class="hover:underline">Newegg Careers</a></li>
+          <li><a href="#" class="hover:underline">Newsroom</a></li>
+        </ul>
+      </div>
+  
+      <!-- Tools & Resources -->
+      <div>
+        <h3 class="font-bold mb-4">TOOLS & RESOURCES</h3>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:underline">Become a Supplier</a></li>
+          <li><a href="#" class="hover:underline">Sell on Newegg.com</a></li>
+          <li><a href="#" class="hover:underline">Student Discount</a></li>
+        </ul>
+      </div>
+    </div>
+  
+    <!-- Bottom Footer -->
+    <div class="border-t border-blue-700">
+      <div
+        class="container mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center"
+      >
+        <!-- Left Legal Links -->
+        <div class="text-center md:text-left mb-4 md:mb-0 text-gray-300 space-x-4">
+          <a href="#" class="hover:underline">Terms & Conditions</a>
+          <a href="#" class="hover:underline">Privacy Policy</a>
+          <a href="#" class="hover:underline">Cookie Preferences</a>
+        </div>
+  
+        <!-- Social Media Icons -->
+        <div class="flex space-x-4">
+          <a href="#" aria-label="Facebook" class="hover:text-gray-400"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" aria-label="Twitter" class="hover:text-gray-400"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram" class="hover:text-gray-400"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube" class="hover:text-gray-400"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+  
+        <!-- Copyright -->
+        <div class="text-gray-300 text-center md:text-right">
+          &copy; 2000-2024 Laptop Depot Inc. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
