@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newegg-like Layout</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <!-- Header -->
+  <header class="bg-white p-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="flex items-center gap-4">
+        <img src="https://placehold.co/120x40?text=Logo" alt="Logo" class="h-8">
+        <nav class="hidden md:flex gap-6 text-sm">
+          <a href="#" class="hover:text-blue-600">Deals</a>
+          <a href="#" class="hover:text-blue-600">Holiday Gift Guide</a>
+          <a href="#" class="hover:text-blue-600">Best Sellers</a>
+        </nav>
+      </div>
+      <div class="flex gap-2">
+        <input type="text" placeholder="Search..." class="border rounded p-2 w-60">
+        <button class="bg-blue-600 text-white px-4 py-2 rounded">Search</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="flex flex-col md:flex-row">
+
+    <!-- Sidebar -->
+    <aside class="w-full md:w-1/5 bg-gradient-to-b from-green-700 to-green-900 text-white p-4">
+      <h2 class="text-lg font-semibold mb-4">Categories</h2>
+      <ul class="space-y-2">
+        <li class="hover:bg-green-800 p-2 rounded"><a href="#">Components & Storage</a></li>
+        <li class="hover:bg-green-800 p-2 rounded"><a href="#">Computer Systems</a></li>
+        <li class="hover:bg-green-800 p-2 rounded"><a href="#">Gaming & VR</a></li>
+        <li class="hover:bg-green-800 p-2 rounded"><a href="#">Electronics</a></li>
+        <li class="hover:bg-green-800 p-2 rounded"><a href="#">Networking</a></li>
+      </ul>
+    </aside>
+
+    <!-- Hero Section and Deals -->
+    <main class="flex-1 p-4">
+      <!-- Hero Section -->
+      <section class="relative bg-blue-900 text-white rounded-lg overflow-hidden mb-8">
+        <img src="https://placehold.co/1200x400?text=Hero+Banner" alt="Hero" class="w-full h-64 object-cover opacity-50">
+        <div class="absolute top-0 left-0 p-8">
+          <h1 class="text-4xl font-bold mb-2">DEALCEMBER</h1>
+          <p class="text-lg">Find the Perfect Gift for Every Loved One</p>
+          <button class="mt-4 bg-white text-blue-900 px-6 py-2 rounded-full hover:bg-gray-300">
+            Shop Now
+          </button>
+        </div>
+      </section>
+
+      <!-- Product Deals -->
+      <section>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <!-- Deal Card -->
+          <div class="bg-white rounded-lg shadow p-4 text-center">
+            <h3 class="text-2xl font-semibold text-green-600 mb-2">Up to 73% Off</h3>
+            <p class="text-gray-600 mb-4">Components & Storage</p>
+            <img src="https://placehold.co/150x150" alt="Product" class="mx-auto mb-4">
+            <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Shop Now</button>
+          </div>
+          <!-- Repeat similar deal cards -->
+          <div class="bg-white rounded-lg shadow p-4 text-center">
+            <h3 class="text-2xl font-semibold text-green-600 mb-2">Up to 72% Off</h3>
+            <p class="text-gray-600 mb-4">Computer Systems</p>
+            <img src="https://placehold.co/150x150" alt="Product" class="mx-auto mb-4">
+            <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Shop Now</button>
+          </div>
+          <div class="bg-white rounded-lg shadow p-4 text-center">
+            <h3 class="text-2xl font-semibold text-green-600 mb-2">Up to 77% Off</h3>
+            <p class="text-gray-600 mb-4">Computer Peripherals</p>
+            <img src="https://placehold.co/150x150" alt="Product" class="mx-auto mb-4">
+            <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Shop Now</button>
+          </div>
+          <div class="bg-white rounded-lg shadow p-4 text-center">
+            <h3 class="text-2xl font-semibold text-green-600 mb-2">Up to 44% Off</h3>
+            <p class="text-gray-600 mb-4">Server & Components</p>
+            <img src="https://placehold.co/150x150" alt="Product" class="mx-auto mb-4">
+            <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Shop Now</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white p-6 text-center">
+    <p>&copy; 2024 Your Website. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
