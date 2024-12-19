@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Login Form</title>
+    <script
+      src="https://cdn.tailwindcss.com"
+      defer
+    ></script>
+  </head>
+  <body class="bg-gray-100 flex items-center justify-center min-h-screen pt-16 pb-16">
+    <!-- Container -->
+    <div
+      class="bg-white text-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md border border-gray-200"
+    >
+      <!-- Logo -->
+      <div class="flex justify-center mb-6">
+        <a href="../../index.html">
+              <img
+              src="../../assets/laptop_depot_logo_with_text.svg"
+              alt="Logo"
+              class="h-24"
+            />
+        </a>
+      </div>
+
+      <!-- Title -->
+      <h2 class="text-2xl font-bold text-center mb-6">
+        Create your Account
+      </h2>
+
+      <!-- Social Sign Up Buttons -->
+      <div class="flex justify-between gap-3 mb-6">
+        <button
+          class="w-1/2 flex items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 py-2 px-4 rounded-lg border"
+        >
+          <img
+            src="../../assets/icons8-google.svg"
+            alt="Google"
+            class="w-5 h-5"
+          />
+          Sign up with Google
+        </button>
+        <button
+          class="w-1/2 flex items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 py-2 px-4 rounded-lg border"
+        >
+          <img
+            src="../../assets/icons8-apple.svg"
+            alt="Apple"
+            class="w-5 h-5"
+          />
+          Sign up with Apple
+        </button>
+      </div>
+
+      <div class="flex items-center my-4">
+        <hr class="flex-grow border-gray-300" />
+        <span class="px-2 text-gray-500">or</span>
+        <hr class="flex-grow border-gray-300" />
+      </div>
+
+      <!-- Form -->
+      <form>
+        <label for="full-name" class="block mb-2 font-medium">Full Name</label>
+        <input
+          id="full-name"
+          type="text"
+          placeholder="John Doe"
+          class="w-full bg-gray-50 text-gray-800 p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4"
+        />
+
+        <label for="email" class="block mb-2 font-medium">Your email</label>
+        <input
+          id="email"
+          type="email"
+          placeholder="name@company.com"
+          class="w-full bg-gray-50 text-gray-800 p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4"
+        />
+
+        <label for="country" class="block mb-2 font-medium">Country</label>
+        <select
+          id="country"
+          class="w-full bg-gray-50 text-gray-800 p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4"
+        >
+          <option value="">Choose a country</option>
+          <option value="US">United States</option>
+          <option value="UK">United Kingdom</option>
+          <option value="UG">Uganda</option>
+        </select>
+
+        <label for="password" class="block mb-2 font-medium">Password</label>
+        <input
+          id="password"
+          type="password"
+          placeholder="••••••••"
+          class="w-full bg-gray-50 text-gray-800 p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4"
+        />
+
+        <label for="confirm-password" class="block mb-2 font-medium"
+          >Confirm Password</label
+        >
+        <input
+          id="confirm-password"
+          type="password"
+          placeholder="••••••••"
+          class="w-full bg-gray-50 text-gray-800 p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4"
+        />
+
+        <div class="flex items-start mb-6">
+          <input
+            id="terms"
+            type="checkbox"
+            class="w-4 h-4 text-blue-500 bg-gray-50 border-gray-300 rounded focus:ring-2 focus:ring-blue-500"
+          />
+          <label for="terms" class="ml-2 text-gray-600 text-sm">
+            By signing up, you agree to Laptop Depot's
+            <a href="#" class="text-red-500 hover:underline">Terms of Use</a>
+            and
+            <a href="#" class="text-red-500 hover:underline">Privacy Policy</a>.
+          </label>
+        </div>
+
+        <button
+          type="submit"
+          class="w-full bg-red-500 hover:bg-red-700 text-white font-bold py-3 rounded-lg text-center"
+        >
+          Create an account
+        </button>
+      </form>
+
+      <!-- Footer -->
+      <p class="mt-4 text-gray-600 text-center">
+        Already have an account?
+        <a href="./signin.html" class="text-red-500 hover:underline">Sign in here</a>
+      </p>
+    </div>
+  </body>
+</html>
