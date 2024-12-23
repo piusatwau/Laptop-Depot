@@ -164,8 +164,12 @@ laptop_depot/                # Project Root
          }
      }
      ```
+5. **Ensure psycopg library for postgres database is installed**
+   ```python
+   pip install psycopg
+   ```
 
-5. **Configure Static and Media Files**
+6. **Configure Static and Media Files**
    ```python
    STATIC_URL = '/static/'
    STATICFILES_DIRS = [BASE_DIR / 'static']
@@ -173,7 +177,7 @@ laptop_depot/                # Project Root
    MEDIA_ROOT = BASE_DIR / 'media'
    ```
 
-6. **Run Initial Migrations**
+7. **Run Initial Migrations**
    ```bash
    python manage.py makemigrations
    python manage.py migrate
