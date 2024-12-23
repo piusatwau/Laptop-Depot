@@ -164,9 +164,14 @@ laptop_depot/                # Project Root
          }
      }
      ```
-5. **Ensure psycopg library for postgres database is installed**
+5. **Ensure psycopg or pycopg2 library for postgres database is installed**
    ```python
    pip install psycopg
+
+   # or
+
+   pip show psycopg2-binary
+
    ```
 
 6. **Configure Static and Media Files**
