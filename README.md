@@ -12,38 +12,181 @@ Whether you’re upgrading your current device, switching brands, or looking for
 
 
 # Set Up
+Django project structure for **Laptop Depot**, designed to keep the code modular, scalable, and maintainable
 
-install python
+---
 
-```python
-pip install python
+### **1. Project Structure**
 
+```plaintext
+laptop_depot/                # Project Root
+├── manage.py                # Django's management script
+├── requirements.txt         # Python dependencies
+├── .env                     # Environment variables (e.g., secrets, database URLs)
+├── laptop_depot/            # Project configuration
+│   ├── __init__.py
+│   ├── settings.py          # Project settings
+│   ├── urls.py              # Main URL routing
+│   ├── wsgi.py              # WSGI entry point for deployment
+│   ├── asgi.py              # ASGI entry point for async tasks
+├── apps/                    # Custom apps folder
+│   ├── users/               # User management app
+│   │   ├── __init__.py
+│   │   ├── admin.py         # Admin customization for users
+│   │   ├── apps.py          # App configuration
+│   │   ├── models.py        # User models (extends AbstractUser)
+│   │   ├── serializers.py   # Serializers for API endpoints
+│   │   ├── urls.py          # URLs specific to users
+│   │   ├── views.py         # Views (e.g., register, login, profile)
+│   │   ├── tests.py         # Unit tests for user functionality
+│   │   ├── forms.py         # Forms (e.g., user registration)
+│   │   └── templates/       # HTML templates for user-related views
+│   │       └── users/
+│   │           └── login.html
+│   ├── products/            # Product management app
+│   │   ├── __init__.py
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── models.py        # Product, Brand, Category models
+│   │   ├── serializers.py
+│   │   ├── urls.py
+│   │   ├── views.py
+│   │   └── tests.py
+│   ├── cart/                # Shopping cart app
+│   │   ├── __init__.py
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── models.py        # CartItem model
+│   │   ├── serializers.py
+│   │   ├── urls.py
+│   │   ├── views.py
+│   │   └── tests.py
+│   ├── orders/              # Order management app
+│   │   ├── __init__.py
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── models.py        # Order, OrderItem models
+│   │   ├── serializers.py
+│   │   ├── urls.py
+│   │   ├── views.py
+│   │   └── tests.py
+│   ├── discounts/           # Discounts and promotions app
+│   │   ├── __init__.py
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── models.py        # Discount model
+│   │   ├── serializers.py
+│   │   ├── urls.py
+│   │   ├── views.py
+│   │   └── tests.py
+├── static/                  # Static files (CSS, JavaScript, images)
+│   ├── css/
+│   ├── js/
+│   └── images/
+├── media/                   # User-uploaded content (e.g., product images)
+├── templates/               # Global HTML templates
+│   ├── base.html            # Base template for extending
+│   ├── navbar.html          # Navbar partial
+│   └── footer.html          # Footer partial
+├── db.sqlite3               # SQLite database (use PostgreSQL in production)
+├── logs/                    # Log files for debugging
+│   ├── error.log
+│   ├── access.log
 ```
 
-create virtual environment
+---
 
-```python
-python -m venv <name_of_virtual_environment>
-```
+### **2. Detailed Explanation**
 
-Activate virtual environment
-```python 
-<name_of_virtual_environment>/scripts/activate
-```
+#### **Main Project (`laptop_depot`)**
+- **`settings.py`**:
+  - Configure apps, middleware, database, and static/media file handling.
+  - Load secrets and environment variables from `.env` (use `django-environ`).
+- **`urls.py`**:
+  - Route global URLs and include app-specific routes.
+- **`wsgi.py`/`asgi.py`**:
+  - Deployment entry points for WSGI or ASGI servers.
 
-Handy git commands
+#### **Custom Apps (`apps/`)**
+- Create each app for a specific functionality (e.g., `users`, `products`, `cart`) to ensure separation of concerns.
+- Each app includes its own `models.py`, `views.py`, `urls.py`, and `serializers.py`.
 
-```python
-git init
+#### **Static and Media**
+- **Static Files**: For frontend assets like CSS, JS, and images.
+- **Media Files**: For user-uploaded content like product images or profile pictures.
 
-git add 
+#### **Templates**
+- Use a global `base.html` to define a consistent structure for your site (e.g., header, footer, navbar).
+- Organize app-specific templates in their respective app directories.
 
-git reset
+#### **Testing**
+- Include unit tests for models, views, and APIs in each app’s `tests.py`.
 
-git commit -m
+---
 
-git push
+### **3. Steps to Set Up**
 
-git push
+1. **Initialize the Project**
+   ```bash
+   django-admin startproject laptop_depot .
+   ```
 
-```
+2. **Create Custom Apps**
+   ```bash
+   python manage.py startapp users
+   python manage.py startapp products
+   python manage.py startapp cart
+   python manage.py startapp orders
+   python manage.py startapp discounts
+   ```
+
+3. **Install Dependencies**
+   - Add necessary libraries to `requirements.txt`, e.g.:
+     ```plaintext
+     django
+     djangorestframework
+     django-environ
+     pillow  # For image handling
+     django-cors-headers  # For frontend-backend communication
+     ```
+
+4. **Set Up Database**
+   - Use PostgreSQL for production and configure it in `settings.py`:
+     ```python
+     DATABASES = {
+         'default': {
+             'ENGINE': 'django.db.backends.postgresql',
+             'NAME': 'laptop_depot',
+             'USER': 'username',
+             'PASSWORD': 'password',
+             'HOST': 'localhost',
+             'PORT': '5432',
+         }
+     }
+     ```
+5. **Ensure psycopg or pycopg2 library for postgres database is installed**
+   ```python
+   pip install psycopg
+
+   # or
+
+   pip show psycopg2-binary
+
+   ```
+
+6. **Configure Static and Media Files**
+   ```python
+   STATIC_URL = '/static/'
+   STATICFILES_DIRS = [BASE_DIR / 'static']
+   MEDIA_URL = '/media/'
+   MEDIA_ROOT = BASE_DIR / 'media'
+   ```
+
+7. **Run Initial Migrations**
+   ```bash
+   python manage.py makemigrations
+   python manage.py migrate
+   ```
+
+---
+
