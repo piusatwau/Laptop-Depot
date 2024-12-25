@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'laptopdepot.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'LaptopDepot_DB.sqlite3',
     }
 }
 
@@ -141,8 +141,12 @@ TAILWIND_CSS = {
     'DEFAULT': 'src/css/style.css',  # Path to main Tailwind CSS file
 }
 
-# static files directory
-STATIC_URL = '/static/'
-
 NPM_BIN_PATH = 'C:/Program Files/nodejs/npm'
+
+# registering custom user model
+AUTH_USER_MODEL = 'users.User'
+
+STATICFILES_DIRS = [BASE_DIR / "static"]
+
+
 
