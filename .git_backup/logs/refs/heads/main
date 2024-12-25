@@ -1,0 +1,9 @@
+0000000000000000000000000000000000000000 a85479b127fea8ba48e6504423fd9792743067b6 piusatwau <atwaupius7@gmail.com> 1734191671 +0530	initial pull
+a85479b127fea8ba48e6504423fd9792743067b6 2c6793969c46db8baafcb8995bb2f85c09341b3d piusatwau <atwaupius7@gmail.com> 1734191709 +0530	commit: project setup
+2c6793969c46db8baafcb8995bb2f85c09341b3d ba7a8bd06667a8f712b95a74f1e90cf0f854576e piusatwau <atwaupius7@gmail.com> 1734191875 +0530	commit: setup transfered to readme
+ba7a8bd06667a8f712b95a74f1e90cf0f854576e d7f3efaece2ac4d107caefb0da4412935b4327a4 piusatwau <atwaupius7@gmail.com> 1734774823 +0530	pull: Fast-forward
+d7f3efaece2ac4d107caefb0da4412935b4327a4 c6bf8b4b66da8d252b163a7c05acb88a5ead42c2 piusatwau <atwaupius7@gmail.com> 1734775203 +0530	commit: started laptopdepot backend development with django
+c6bf8b4b66da8d252b163a7c05acb88a5ead42c2 d20b26682b3f5ded7dcdfe2a6d1e4d29f8054471 piusatwau <atwaupius7@gmail.com> 1734948265 +0530	commit: added the starting necessary apps
+d20b26682b3f5ded7dcdfe2a6d1e4d29f8054471 928d9bb0ede43b6ab2bcda26a2ec534a1533c191 piusatwau <atwaupius7@gmail.com> 1734948281 +0530	pull: Merge made by the 'ort' strategy.
+928d9bb0ede43b6ab2bcda26a2ec534a1533c191 aab61c05e29c12e3099ad6de7884c8c085781388 piusatwau <atwaupius7@gmail.com> 1734948323 +0530	commit: documentation of the project structure
+aab61c05e29c12e3099ad6de7884c8c085781388 da3274bc9ee1834264e1ed20d744e7f749b29174 piusatwau <atwaupius7@gmail.com> 1734948422 +0530	commit: project requirements

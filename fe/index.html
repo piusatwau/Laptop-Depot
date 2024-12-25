@@ -13,131 +13,124 @@
   <!-- Top Navbar -->
   <header class="bg-white shadow-md">
     <nav class="bg-white dark:bg-red-100 fixed w-full z-20 top-0 start-0 border-b border-red-200 dark:border-red-600">
-
-          <div class="flex justify-between items-center p-4">
-            <!-- Logo -->
-            <div class="flex items-center space-x-4">
-              <a href="./index.html" class="flex items-center space-x-2">
-                <img src="./assets/laptop_depot_logo.svg" alt="Logo" class="h-8">
-                <div class="text-gray-600">
-                  <span class="font-bold text-lg">Laptop Depot</span>
+      <div class="flex justify-between items-center p-4">
+        <!-- Logo -->
+        <div class="flex items-center space-x-4">
+          <a href="./index.html" class="flex items-center space-x-2">
+            <img src="./assets/laptop_depot_logo.svg" alt="Logo" class="h-8">
+            <div class="text-gray-600">
+              <span class="font-bold text-lg">Laptop Depot</span>
+            </div>
+          </a>
+        </div>
+  
+        <!-- Hamburger Menu for Mobile -->
+        <button class="sm:hidden block text-gray-600" id="mobile-menu-btn">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </button>
+  
+        <!-- Mobile Menu -->
+        <div class="hidden fixed top-0 left-0 w-3/4 bg-white h-full z-50 shadow-lg" id="mobile-menu">
+          <div class="flex justify-end p-4">
+            <button class="text-gray-600 text-2xl" id="close-mobile-menu">&times;</button>
+          </div>
+          <ul class="space-y-4 p-4 text-gray-600">
+            <li><a href="#" class="hover:text-blue-600">Sign In / Register</a></li>
+            <li><a href="./components/cart/cart.html" class="hover:text-blue-600">Cart</a></li> <!-- Check this line -->
+            <li><a href="#" class="hover:text-blue-600">Deals</a></li>
+            <li><a href="" class="hover:text-blue-600">Help Center</a></li>
+          </ul>
+        </div>
+  
+        <!-- Search Bar -->
+        <div class="hidden sm:flex flex-1 mx-4 relative">
+          <input type="text" placeholder="Search" class="w-full py-2 px-4 border rounded-full focus:outline-none" />
+          <button class="absolute right-1 top-1/2 transform -translate-y-1/2 bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+  
+        <!-- Icons -->
+        <div class="hidden sm:flex items-center space-x-6 text-gray-600">
+          <button><i class="fa-solid fa-bell"></i></button>
+          <button><i class="fa-solid fa-location-dot"></i></button>
+          <button><i class="fa-solid fa-toggle-on"></i></button>
+          <a href="./components/authentication/signin.html" class="hover:text-red-500">Sign In / Register</a>
+          <a href="./components/cart/cart.html" class="hover:text-red-500"><i class="fa-solid fa-cart-shopping"></i></a> <!-- Check this line -->
+        </div>
+      </div>
+  
+      <!-- Bottom Navbar -->
+      <nav class="bg-red-100 py-2 border-t">
+        <div class="flex flex-wrap items-center justify-between px-6">
+          <!-- Left-Aligned Dropdown -->
+          <div class="relative group">
+            <a href="#" class="flex items-center space-x-2 font-semibold text-gray-600 hover:text-blue-600">
+              <i class="fa-solid fa-bars"></i>
+              <span>Menu</span>
+            </a>
+            <!-- Mega Dropdown -->
+            <div class="absolute left-0 hidden w-[700px] bg-white border border-gray-200 shadow-lg group-hover:block z-50">
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-6">
+                <!-- Section 1 -->
+                <div>
+                  <h3 class="font-semibold text-lg text-red-800 mb-2">Brands</h3>
+                  <ul>
+                    <li><a href="#" class="block py-1 text-gray-700 hover:text-gray-900">Apple</a></li>
+                    <li><a href="#" class="block py-1 text-gray-700 hover:text-gray-900">HP</a></li>
+                    <li><a href="#" class="block py-1 text-gray-700 hover:text-gray-900">Dell</a></li>
+                    <li><a href="#" class="block py-1 text-gray-700 hover:text-gray-900">Lenovo</a></li>
+                  </ul>
                 </div>
-              </a>
-            </div>
-        
-            <!-- Hamburger Menu for Mobile -->
-            <button class="sm:hidden block text-gray-600" id="mobile-menu-btn">
-              <i class="fa-solid fa-cart-shopping"></i>
-            </button>
-        
-            <!-- Mobile Menu -->
-            <div class="hidden fixed top-0 left-0 w-3/4 bg-white h-full z-50 shadow-lg" id="mobile-menu">
-              <div class="flex justify-end p-4">
-                <button class="text-gray-600 text-2xl" id="close-mobile-menu">&times;</button>
+                <!-- Section 2 -->
+                <div>
+                  <h3 class="font-semibold text-lg text-red-800 mb-2">Categories</h3>
+                  <ul>
+                    <li><a href="#" class="block py-1 text-gray-700 hover:text-gray-900">Laptops</a></li>
+                    <li><a href="#" class="block py-1 text-gray-700 hover:text-gray-900">Desktops</a></li>
+                    <li><a href="#" class="block py-1 text-gray-700 hover:text-gray-900">Monitors</a></li>
+                    <li><a href="#" class="block py-1 text-gray-700 hover:text-gray-900">Accessories</a></li>
+                  </ul>
+                </div>
+                <!-- Section 3 -->
+                <div>
+                  <h3 class="font-semibold text-lg text-red-800 mb-2">Offers</h3>
+                  <ul>
+                    <li><a href="#" class="block py-1 text-gray-700 hover:text-gray-900">Up to 50% Off</a></li>
+                    <li><a href="#" class="block py-1 text-gray-700 hover:text-gray-900">Clearance Sale</a></li>
+                    <li><a href="#" class="block py-1 text-gray-700 hover:text-gray-900">Bundle Deals</a></li>
+                  </ul>
+                </div>
+                <!-- Section 4 -->
+                <div>
+                  <h3 class="font-semibold text-lg text-red-800 mb-2">Support</h3>
+                  <ul>
+                    <li><a href="#" class="block py-1 text-gray-700 hover:text-gray-900">Contact Us</a></li>
+                    <li><a href="#" class="block py-1 text-gray-700 hover:text-gray-900">Warranty</a></li>
+                    <li><a href="#" class="block py-1 text-gray-700 hover:text-gray-900">FAQs</a></li>
+                  </ul>
+                </div>
               </div>
-              <ul class="space-y-4 p-4 text-gray-600">
-                <li><a href="#" class="hover:text-blue-600">Sign In / Register</a></li>
-                <li><a href="#" class="hover:text-blue-600">Cart</a></li>
-                <li><a href="#" class="hover:text-blue-600">Deals</a></li>
-                <li><a href="#" class="hover:text-blue-600">Help Center</a></li>
-              </ul>
-            </div>
-        
-            <!-- Search Bar -->
-            <div class="hidden sm:flex flex-1 mx-4 relative">
-              <input
-                type="text"
-                placeholder="Search"
-                class="w-full py-2 px-4 border rounded-full focus:outline-none"
-              />
-              <button
-                class="absolute right-1 top-1/2 transform -translate-y-1/2 bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600"
-              >
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </button>
-            </div>
-        
-            <!-- Icons -->
-            <div class="hidden sm:flex items-center space-x-6 text-gray-600">
-              <button><i class="fa-solid fa-bell"></i></button>
-              <button><i class="fa-solid fa-location-dot"></i></button>
-              <button><i class="fa-solid fa-toggle-on"></i></button>
-              <a href="./components/authentication/signin.html" class="hover:text-red-500">Sign In / Register</a>
-              <a href="#" class="hover:text-red-500"><i class="fa-solid fa-cart-shopping"></i></a>
             </div>
           </div>
-        
-          <!-- Bottom Navbar -->
-          <nav class="bg-red-100 py-2 border-t">
-            <div class="flex flex-wrap items-center justify-between px-6">
-              <!-- Left-Aligned Dropdown -->
-              <div class="relative group">
-                <a href="#" class="flex items-center space-x-2 font-semibold text-gray-600 hover:text-blue-600">
-                  <i class="fa-solid fa-bars"></i>
-                  <span>Menu</span>
-                </a>
-                <!-- Mega Dropdown -->
-                <div class="absolute left-0 hidden w-[700px] bg-white border border-gray-200 shadow-lg group-hover:block z-50">
-                  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-6">
-                    <!-- Section 1 -->
-                    <div>
-                      <h3 class="font-semibold text-lg text-red-800 mb-2">Brands</h3>
-                      <ul>
-                        <li><a href="#" class="block py-1 text-gray-700 hover:text-gray-900">Apple</a></li>
-                        <li><a href="#" class="block py-1 text-gray-700 hover:text-gray-900">HP</a></li>
-                        <li><a href="#" class="block py-1 text-gray-700 hover:text-gray-900">Dell</a></li>
-                        <li><a href="#" class="block py-1 text-gray-700 hover:text-gray-900">Lenovo</a></li>
-                      </ul>
-                    </div>
-                    <!-- Section 2 -->
-                    <div>
-                      <h3 class="font-semibold text-lg text-red-800 mb-2">Categories</h3>
-                      <ul>
-                        <li><a href="#" class="block py-1 text-gray-700 hover:text-gray-900">Laptops</a></li>
-                        <li><a href="#" class="block py-1 text-gray-700 hover:text-gray-900">Desktops</a></li>
-                        <li><a href="#" class="block py-1 text-gray-700 hover:text-gray-900">Monitors</a></li>
-                        <li><a href="#" class="block py-1 text-gray-700 hover:text-gray-900">Accessories</a></li>
-                      </ul>
-                    </div>
-                    <!-- Section 3 -->
-                    <div>
-                      <h3 class="font-semibold text-lg text-red-800 mb-2">Offers</h3>
-                      <ul>
-                        <li><a href="#" class="block py-1 text-gray-700 hover:text-gray-900">Up to 50% Off</a></li>
-                        <li><a href="#" class="block py-1 text-gray-700 hover:text-gray-900">Clearance Sale</a></li>
-                        <li><a href="#" class="block py-1 text-gray-700 hover:text-gray-900">Bundle Deals</a></li>
-                      </ul>
-                    </div>
-                    <!-- Section 4 -->
-                    <div>
-                      <h3 class="font-semibold text-lg text-red-800 mb-2">Support</h3>
-                      <ul>
-                        <li><a href="#" class="block py-1 text-gray-700 hover:text-gray-900">Contact Us</a></li>
-                        <li><a href="#" class="block py-1 text-gray-700 hover:text-gray-900">Warranty</a></li>
-                        <li><a href="#" class="block py-1 text-gray-700 hover:text-gray-900">FAQs</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-        
-              <!-- Center-Aligned Links -->
-              <div class="hidden sm:flex justify-center space-x-6 font-semibold text-gray-600">
-                <a href="#" class="text-green-600">Dealcember Deals</a>
-                <a href="#" class="text-red-600">Holiday Gift Guide</a>
-                <a href="#" class="hover:text-blue-600">PC Builder</a>
-                <a href="#" class="hover:text-blue-600">Clearance</a>
-                <a href="#" class="hover:text-blue-600">Best Sellers</a>
-              </div>
-        
-              <!-- Right-Aligned Buttons -->
-              <div class="hidden sm:flex space-x-4">
-                <a href="#" class="py-1 px-3 text-sm font-semibold text-white bg-red-500 rounded hover:bg-red-600">Feedback</a>
-                <a href="#" class="py-1 px-3 text-sm font-semibold text-white bg-gray-600 rounded hover:bg-gray-900">Help Center</a>
-              </div>
-            </div>
-          </nav>
+  
+          <!-- Center-Aligned Links -->
+          <div class="hidden sm:flex justify-center space-x-6 font-semibold text-gray-600">
+            <a href="#" class="text-green-600">Dealcember Deals</a>
+            <a href="#" class="text-red-600">Holiday Gift Guide</a>
+            <a href="#" class="hover:text-blue-600">PC Builder</a>
+            <a href="#" class="hover:text-blue-600">Clearance</a>
+            <a href="#" class="hover:text-blue-600">Best Sellers</a>
+          </div>
+  
+          <!-- Right-Aligned Buttons -->
+          <div class="hidden sm:flex space-x-4">
+            <a href="#" class="py-1 px-3 text-sm font-semibold text-white bg-red-500 rounded hover:bg-red-600">Feedback</a>
+            <a href="#" class="py-1 px-3 text-sm font-semibold text-white bg-gray-600 rounded hover:bg-gray-900">Help Center</a>
+          </div>
+        </div>
       </nav>
+    </nav>
   </header>
 
   <!-- *******************************************************

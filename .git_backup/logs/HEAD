@@ -1,0 +1,24 @@
+0000000000000000000000000000000000000000 8620f93e9c360b1c440fcded1a174db273c9389e piusatwau <atwaupius7@gmail.com> 1734191012 +0530	commit (initial): setting up project
+0000000000000000000000000000000000000000 a85479b127fea8ba48e6504423fd9792743067b6 piusatwau <atwaupius7@gmail.com> 1734191671 +0530	initial pull
+a85479b127fea8ba48e6504423fd9792743067b6 2c6793969c46db8baafcb8995bb2f85c09341b3d piusatwau <atwaupius7@gmail.com> 1734191709 +0530	commit: project setup
+2c6793969c46db8baafcb8995bb2f85c09341b3d ba7a8bd06667a8f712b95a74f1e90cf0f854576e piusatwau <atwaupius7@gmail.com> 1734191875 +0530	commit: setup transfered to readme
+ba7a8bd06667a8f712b95a74f1e90cf0f854576e ba7a8bd06667a8f712b95a74f1e90cf0f854576e piusatwau <atwaupius7@gmail.com> 1734473946 +0530	checkout: moving from main to fe
+ba7a8bd06667a8f712b95a74f1e90cf0f854576e d697e7eca2df6440c650708718d61ae4004b912e piusatwau <atwaupius7@gmail.com> 1734558218 +0530	commit: fe design
+d697e7eca2df6440c650708718d61ae4004b912e 59741b209befc60e62404cfba292d57a467a1d9c piusatwau <atwaupius7@gmail.com> 1734564463 +0530	commit: cleaned basic frontend
+59741b209befc60e62404cfba292d57a467a1d9c 6b3ed5d736c9e4c98e73010f9a91798f4788d214 piusatwau <atwaupius7@gmail.com> 1734565301 +0530	commit: added hero section banner
+6b3ed5d736c9e4c98e73010f9a91798f4788d214 82e9c7208d8cc8aa8a23a03c15e84d9d4e4e1f39 piusatwau <atwaupius7@gmail.com> 1734570931 +0530	commit: added authentication pages
+82e9c7208d8cc8aa8a23a03c15e84d9d4e4e1f39 7792f0517a1005f3f201eaddc33ba3271cfa73b3 piusatwau <atwaupius7@gmail.com> 1734774805 +0530	commit: more work on making the frontend beautiful
+7792f0517a1005f3f201eaddc33ba3271cfa73b3 ba7a8bd06667a8f712b95a74f1e90cf0f854576e piusatwau <atwaupius7@gmail.com> 1734774818 +0530	checkout: moving from fe to main
+ba7a8bd06667a8f712b95a74f1e90cf0f854576e d7f3efaece2ac4d107caefb0da4412935b4327a4 piusatwau <atwaupius7@gmail.com> 1734774823 +0530	pull: Fast-forward
+d7f3efaece2ac4d107caefb0da4412935b4327a4 7792f0517a1005f3f201eaddc33ba3271cfa73b3 piusatwau <atwaupius7@gmail.com> 1734774838 +0530	checkout: moving from main to fe
+7792f0517a1005f3f201eaddc33ba3271cfa73b3 d7f3efaece2ac4d107caefb0da4412935b4327a4 piusatwau <atwaupius7@gmail.com> 1734775055 +0530	checkout: moving from fe to main
+d7f3efaece2ac4d107caefb0da4412935b4327a4 c6bf8b4b66da8d252b163a7c05acb88a5ead42c2 piusatwau <atwaupius7@gmail.com> 1734775203 +0530	commit: started laptopdepot backend development with django
+c6bf8b4b66da8d252b163a7c05acb88a5ead42c2 7792f0517a1005f3f201eaddc33ba3271cfa73b3 piusatwau <atwaupius7@gmail.com> 1734943691 +0530	checkout: moving from main to fe
+7792f0517a1005f3f201eaddc33ba3271cfa73b3 c6bf8b4b66da8d252b163a7c05acb88a5ead42c2 piusatwau <atwaupius7@gmail.com> 1734943764 +0530	checkout: moving from fe to main
+c6bf8b4b66da8d252b163a7c05acb88a5ead42c2 7792f0517a1005f3f201eaddc33ba3271cfa73b3 piusatwau <atwaupius7@gmail.com> 1734944007 +0530	checkout: moving from main to fe
+7792f0517a1005f3f201eaddc33ba3271cfa73b3 c6bf8b4b66da8d252b163a7c05acb88a5ead42c2 piusatwau <atwaupius7@gmail.com> 1734945796 +0530	checkout: moving from fe to main
+c6bf8b4b66da8d252b163a7c05acb88a5ead42c2 d20b26682b3f5ded7dcdfe2a6d1e4d29f8054471 piusatwau <atwaupius7@gmail.com> 1734948265 +0530	commit: added the starting necessary apps
+d20b26682b3f5ded7dcdfe2a6d1e4d29f8054471 928d9bb0ede43b6ab2bcda26a2ec534a1533c191 piusatwau <atwaupius7@gmail.com> 1734948281 +0530	pull: Merge made by the 'ort' strategy.
+928d9bb0ede43b6ab2bcda26a2ec534a1533c191 aab61c05e29c12e3099ad6de7884c8c085781388 piusatwau <atwaupius7@gmail.com> 1734948323 +0530	commit: documentation of the project structure
+aab61c05e29c12e3099ad6de7884c8c085781388 da3274bc9ee1834264e1ed20d744e7f749b29174 piusatwau <atwaupius7@gmail.com> 1734948422 +0530	commit: project requirements
+da3274bc9ee1834264e1ed20d744e7f749b29174 7792f0517a1005f3f201eaddc33ba3271cfa73b3 piusatwau <atwaupius7@gmail.com> 1734948548 +0530	checkout: moving from main to fe
