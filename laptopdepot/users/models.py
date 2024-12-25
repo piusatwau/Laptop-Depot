@@ -1,13 +1,10 @@
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from django.db import models
-from django.contrib.auth.models import BaseUserManager
+from django.contrib.auth.models import BaseUserManager, Group, Permission
 
-# Custom User Mnager
+# Custom User Manager
 class CustomUserManager(BaseUserManager):
     def create_user(self, username, email, password=None, **extra_fields):
-        
-        # Create and return a regular user with the given username, email, and password.
-       
         if not email:
             raise ValueError('The Email field must be set')
         if not username:
@@ -20,9 +17,6 @@ class CustomUserManager(BaseUserManager):
         return user
 
     def create_superuser(self, username, email, password=None, **extra_fields):
-        
-        # Create and return a superuser with the given username, email, and password.
-       
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_superuser', True)
 
@@ -34,16 +28,13 @@ class CustomUserManager(BaseUserManager):
         return self.create_user(username, email, password, **extra_fields)
 
 
-# CUstom User Model
+# Custom User Model
 class User(AbstractBaseUser, PermissionsMixin):
-    
-    # Custom User model that uses email instead of username for authentication.
-    
     username = models.CharField(max_length=150, unique=True)
     email = models.EmailField(unique=True)
-    is_active = models.BooleanField(default=True)  # Indicates if the user is active
-    is_staff = models.BooleanField(default=False)  # Determines if the user can access the admin site
-    is_admin = models.BooleanField(default=False)  # Custom field for admin distinction
+    is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
+    is_admin = models.BooleanField(default=False)
     date_joined = models.DateTimeField(auto_now_add=True)
 
     # Specify the fields to use for authentication
@@ -52,6 +43,19 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     # Use the custom manager
     objects = CustomUserManager()
+
+    # Customizing reverse relationships for `groups` and `user_permissions`
+    groups = models.ManyToManyField(
+        Group,
+        related_name='custom_user_set',  # to avoid clashing
+        blank=True
+    )
+
+    user_permissions = models.ManyToManyField(
+        Permission,
+        related_name='custom_user_permissions_set',  # to avoid clashing
+        blank=True
+    )
 
     def __str__(self):
         return self.email

@@ -44,7 +44,11 @@ INSTALLED_APPS = [
     'orders.apps.OrdersConfig',
     'products.apps.ProductsConfig',
     'users.apps.UsersConfig',
-    'wishlist.apps.WishListConfig',
+    'wishlist.apps.WishlistConfig',
+    'rest_framework',
+    'discounts.apps.DiscountsConfig',
+    'tailwind', # tailwind css
+    'theme', # tailwind settings
 ]
 
 MIDDLEWARE = [
@@ -83,12 +87,8 @@ WSGI_APPLICATION = 'laptopdepot.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'laptop_depot',
-        'USER': 'username',
-        'PASSWORD': 'password',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -133,3 +133,16 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# MY CODE
+TAILWIND_APP_NAME = 'theme'
+
+TAILWIND_CSS = {
+    'DEFAULT': 'src/css/style.css',  # Path to main Tailwind CSS file
+}
+
+# static files directory
+STATIC_URL = '/static/'
+
+NPM_BIN_PATH = 'C:/Program Files/nodejs/npm'
+
