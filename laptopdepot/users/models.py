@@ -37,7 +37,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_admin = models.BooleanField(default=False)
     date_joined = models.DateTimeField(auto_now_add=True)
 
-    # Specify the fields to use for authentication
+    # Fields to use for authentication
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']
 

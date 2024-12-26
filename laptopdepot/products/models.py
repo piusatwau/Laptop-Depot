@@ -1,17 +1,23 @@
 from django.db import models
+from users.models import User
+
 
 # Products Model
-
 class Product(models.Model):
     # Laptop Options
+    HP = 'HP'
+    APPLE = 'Apple'
+    LENOVO = 'Lenovo'
+    DELL = 'Dell'
+
     BRAND_CHOICES = [
-        ('HP', 'HP'),
-        ('Apple', 'Apple'),
-        ('Lenovo', 'Lenovo'),
-        ('Dell', 'Dell'),
+        (HP, 'HP'),
+        (APPLE, 'Apple'),
+        (LENOVO, 'Lenovo'),
+        (DELL, 'Dell'),
     ]
 
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=100)
     brand = models.CharField(max_length=50, choices=BRAND_CHOICES)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     description = models.TextField()
@@ -22,16 +28,17 @@ class Product(models.Model):
     stock_quantity = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='products')
 
     def __str__(self):
         return self.name
 
-# Reviews Model
 
+# Reviews Model
 class Review(models.Model):
     RATING_CHOICES = [(i, i) for i in range(1, 6)]
 
-    user = models.ForeignKey('users.User', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     rating = models.IntegerField(choices=RATING_CHOICES)
     comment = models.TextField()
