@@ -39,19 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     # MY APPS
-    
-    'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
     'products.apps.ProductsConfig',
     'users.apps.UsersConfig',
-    'wishlist.apps.WishlistConfig',
     'rest_framework',
-    'discounts.apps.DiscountsConfig',
-    'tailwind', # tailwind css
-    'theme', # tailwind settings
 ]
 
-TAILWIND_APP_NAME = 'theme'
 
 INTERNAL_IPS = [
     "127.0.0.1",

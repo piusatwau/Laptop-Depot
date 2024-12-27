@@ -21,4 +21,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('users.urls')),  # user URLs
     path('api-auth/', include('rest_framework.urls')),
+    path('api/', include('products.urls')),  # Product-related endpoints
+    path('api/', include('orders.urls')),    # Order-related endpoints
+    path('api/', include('users.urls')),     # User-related endpoints
 ]
+

@@ -28,7 +28,7 @@ class Product(models.Model):
     stock_quantity = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    created_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='products')
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='products', default=None)
 
     def __str__(self):
         return self.name
