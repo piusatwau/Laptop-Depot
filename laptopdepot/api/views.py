@@ -1,9 +1,16 @@
 from rest_framework import viewsets, permissions
 from rest_framework.decorators import action
 from rest_framework.response import Response
-from products.models import Product, Review 
+from products.models import Product, Review
 from orders.models import Order, OrderItem
-from .serializers import ProductSerializer, ReviewSerializer, OrderSerializer, OrderItemSerializer
+from .serializers import ProductSerializer, ReviewSerializer, OrderSerializer, OrderItemSerializer, UserSerializer
+from users.models import User
+
+# User ViewSet
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = [permissions.IsAdminUser]
 
 # Product ViewSet
 class ProductViewSet(viewsets.ModelViewSet):
