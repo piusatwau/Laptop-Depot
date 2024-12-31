@@ -1,0 +1,10 @@
+{% extends 'base/main.html' %} # This line tells Django to use the main.html template as the base template for this template.
+
+{% load static %}
+
+{% block content %}
+
+<img src="{% static 'images/microphone.svg' %}" alt="microphone" class="lobby-image">
+<h2>Lobby</h2>
+
+{% endblock content %}
